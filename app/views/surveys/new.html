@@ -1,0 +1,21 @@
+<head>
+ <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+</head>
+
+<div class="container">
+  <form class="survey-details">
+    <input type="text" placeholder="Survey Name" name="survey[title]">
+    <textarea placeholder="Description" name="survey[description]"></textarea>
+  </form>
+
+  <form class="question-details" id="question1">
+    <!-- think about injecting question # in placeholder & name -->
+    <input type="text" placeholder="Question" name="question1[content]">
+    <input type="text" placeholder="Answer"   name="question1[answer1]">
+    <input type="text" placeholder="Answer"   name="question1[answer2]">
+    <button type="button" class="add-answer"> + </button>
+  </form>
+
+  <button type="button" id="next-question"> Add Question </button>
+  <button type="button" id="save-survey"> Save Survey </button>
+</div>
