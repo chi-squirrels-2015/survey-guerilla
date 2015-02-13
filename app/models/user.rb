@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
 
   has_many :surveys
-  has_many :taken_surveys
+  has_many :records
   has_many :questions, through: :surveys
 
   validates :name, presence: true

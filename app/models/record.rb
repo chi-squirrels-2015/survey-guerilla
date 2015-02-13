@@ -1,4 +1,4 @@
-class TakenSurvey < ActiveRecord::Base
+class Record < ActiveRecord::Base
 
   belongs_to :survey
   belongs_to :user

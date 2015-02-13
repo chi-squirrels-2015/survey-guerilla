@@ -1,6 +1,6 @@
-class TakenSurveys < ActiveRecord::Migration
+class Records < ActiveRecord::Migration
   def change
-    create_table :taken_surveys do |t|
+    create_table :records do |t|
       t.references  :respondent, class_name: "User"
       t.references  :survey
 
