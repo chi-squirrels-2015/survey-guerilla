@@ -1,8 +1,9 @@
+var surveyId = null;
+
 $(document).ready(function(){
   
   // set questionCount by counting number of question-details forms
   var questionCount = $("form.question-details").length;
-
   // add answer button logic
   // appends new answer div to question-details form
   $(".container").on("click",".add-answer",function (){
@@ -15,20 +16,51 @@ $(document).ready(function(){
     $(this).parent().remove();
   });
 
+  // createOrUpdateSurvey() is in document.ready scope
+  function createOrUpdateSurvey() {
+    if (surveyId){
+      // update Survey if it exists
+      $.ajax({
+        url: "/surveys/"+surveyId+"/edit",
+        method: "put",
+        data: $(".survey-details").serialize(),
+        success: function(response){
+          surveyId = response.id;
+        }
+      });
+    } else {
+      // create Survey if it doesnt exist
+      $.ajax({
+        url: "/surveys",
+        method: "post",
+        data: $(".survey-details").serialize(),
+        success: function(response){
+          surveyId = response.id;
+        }
+      });
+    }
+  }
 
+  var timer = null;
 
-  $(".survey-details").on("focusout", function(){
-    
-    $.ajax({
-      url: "/surveys",
-      method: "post",
-      data: $(".survey-details").serialize(),
-      success: function(response){
-        surveyId = response.id;
-      }
-    });
-
+  $("input, textarea").focus( function(){
+    if (timer) {
+      clearTimeout(timer);
+      timer = null;
+    }
   });
+
+
+  $("input, textarea").blur(function() {
+      releaseTheHounds();
+  });
+
+  function releaseTheHounds() {
+    timer = setTimeout(function () {
+      createOrUpdateSurvey(); 
+    }, 1);
+  }
+
 
   // add question button logic
   // adds new question-details form to container
