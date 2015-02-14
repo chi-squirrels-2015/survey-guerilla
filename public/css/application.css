@@ -1,0 +1,28 @@
+.container {
+  border: solid 1px rgb(108,223,234);
+  margin: 0 auto;
+  width: 80%;
+  padding: 20px;
+}
+
+form {
+  display: block;
+}
+
+input[type="text"] {
+  height: 40px;
+  width: 200px;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+
+textarea {
+  border-radius: 5px; 
+  height: 40px;
+  width: 200px;
+  display: block;
+}
+
+.answer {
+  width: 400px;
+}
