@@ -43,7 +43,7 @@ $(document).ready(function(){
 
   var timer = null;
 
-  $("input, textarea").focus( function(){
+  $("input.survey-details, textarea").focus( function(){
     if (timer) {
       clearTimeout(timer);
       timer = null;
@@ -51,7 +51,7 @@ $(document).ready(function(){
   });
 
 
-  $("input, textarea").blur(function() {
+  $("input.survey-details, textarea").blur(function() {
       releaseTheHounds();
   });
 
