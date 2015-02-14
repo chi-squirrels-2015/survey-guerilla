@@ -15,19 +15,34 @@ $(document).ready(function(){
     $(this).parent().remove();
   });
 
-  // add question button logic
-  // adds new question-details form to container
-  $("#add-question").click(function (){
 
-    // !!!temporary location, proof of concept!!!!
+
+  $(".survey-details").on("focusout", function(){
+    
     $.ajax({
       url: "/surveys",
       method: "post",
       data: $(".survey-details").serialize(),
       success: function(response){
         surveyId = response.id;
-      });
-    }
+      }
+    });
+
+  });
+
+  // add question button logic
+  // adds new question-details form to container
+  $("#add-question").click(function (){
+
+    // !!!temporary location, proof of concept!!!!
+    // $.ajax({
+    //   url: "/surveys",
+    //   method: "post",
+    //   data: $(".survey-details").serialize(),
+    //   success: function(response){
+    //     surveyId = response.id;
+    //   });
+    // }
 
     if (questionCount > 1) {
       $.ajax({
