@@ -1,4 +1,4 @@
-class Responses < ActiveRecord::Migration
+class CreateResponses < ActiveRecord::Migration
   def change
     create_table :responses do |t|
       t.references  :answer
