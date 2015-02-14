@@ -1,5 +1,3 @@
-
-
 $(document).ready(function(){
   
   // set questionCount by counting number of question-details forms
@@ -31,7 +29,12 @@ $(document).ready(function(){
 
   });
 
-
-
+  $("#save-survey").click(function(){
+    $.ajax({
+      url: "/surveys",
+      method: "post",
+      data: $("form").serialize()
+    });
+  });
 
 });
