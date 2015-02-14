@@ -1,0 +1,27 @@
+<head>
+ <link rel="stylesheet" href="../../../public/css/application.css">
+ <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="../../../public/js/survey_form.js"></script>
+ 
+</head>
+
+<div class="container">
+  <form class="survey-details">
+    <input type="text" placeholder="Survey Name" name="survey[title]">
+    <textarea placeholder="Description" name="survey[description]"></textarea>
+  </form>
+
+  <form class="question-details" id="question1">
+    <input type="text" placeholder="Question" name="question1[content]">
+      <div class="answer">
+        <input type="text" placeholder="Answer"   name="question1[answers][]"> <button type="button" class="remove-answer"> - </button>
+      </div>
+      <div class="answer">
+        <input type="text" placeholder="Answer"   name="question1[answers][]"> <button type="button" class="remove-answer"> - </button>
+      </div>
+        <button type="button" class="add-answer"> + </button>
+  </form>
+
+  <button type="button" id="add-question"> Add Question </button>
+  <button type="button" id="save-survey"> Save Survey </button>
+</div>
