@@ -25,3 +25,12 @@ post '/logins' do
     erb :"/logins"
   end
 end
+
+get '/surveys/new' do
+  @survey = Survey.create
+  erb :"/surveys/new"
+end
+
+post '/surveys' do
+  puts params
+end
