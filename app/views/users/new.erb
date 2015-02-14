@@ -1,0 +1,12 @@
+<div class="login-box">
+  <h1>Register</h1>
+
+  <form id="signup" method="post" action="/users/new">
+    <%= erb :"/users/_form", locals: { click: @click }  %>
+    <div class="submit">
+      <input type="submit" value="Register">
+    </div>
+  </form>
+
+</div>
+
