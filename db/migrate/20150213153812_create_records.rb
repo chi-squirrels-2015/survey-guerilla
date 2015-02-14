@@ -1,4 +1,4 @@
-class Records < ActiveRecord::Migration
+class CreateRecords < ActiveRecord::Migration
   def change
     create_table :records do |t|
       t.references  :respondent, class_name: "User"
