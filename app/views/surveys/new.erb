@@ -12,13 +12,14 @@
   </form>
 
   <form class="question-details" id="question1">
-    <input type="text" placeholder="Question" name="question1[content]">
+    <input type="text" placeholder="Question" name="question[content]">
       <div class="answer">
-        <input type="text" placeholder="Answer"   name="question1[answers][]"> <button type="button" class="remove-answer"> - </button>
+        <input type="text" placeholder="Answer"   name="question[answers][]"> <button type="button" class="remove-answer"> - </button>
       </div>
       <div class="answer">
-        <input type="text" placeholder="Answer"   name="question1[answers][]"> <button type="button" class="remove-answer"> - </button>
+        <input type="text" placeholder="Answer"   name="question[answers][]"> <button type="button" class="remove-answer"> - </button>
       </div>
+        <input type="hidden" name="question_id" value="1">
         <button type="button" class="add-answer"> + </button>
   </form>
 
