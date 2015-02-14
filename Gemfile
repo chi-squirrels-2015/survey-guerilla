@@ -15,6 +15,7 @@ gem 'rake'
 gem 'faker'
 gem 'bcrypt'
 gem 'shotgun'
+gem 'json'
 
 group :test do
   gem 'shoulda-matchers'
