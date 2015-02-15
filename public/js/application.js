@@ -1,7 +1,20 @@
 $(document).ready(function() {
-  // This is called after the document has loaded in its entirety
-  // This guarantees that any elements we bind to will exist on the page
-  // when we try to bind to them
+  $("#userlogin li").click(function(e) {
+    e.preventDefault();
+    var click = e.currentTarget.id;
+    console.log(click)
+    if (click === "logout"){
+      $.ajax({
+        url: "/userlogout"
+      }).done(function(){
+        location.reload();
+      })
 
-  // See: http://docs.jquery.com/Tutorials:Introducing_$(document).ready()
+    }else {
+      $(".signup-box").hide();
+      $(".signin-box").hide();
+      $("."+ click +"-box").toggle();
+    }
+  });
 });
+

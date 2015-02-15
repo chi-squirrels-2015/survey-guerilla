@@ -3,11 +3,12 @@ require "faker"
 10.times do
   User.create(name: Faker::Name.name, email: Faker::Internet.email, password: "password")
 end
+User.create(name: "Test", email: "test@test.com", password: "aaaa" )
 
-2.times do
+10.times do
   Survey.create(creator: User.find(rand(10)+1),
                    title: Faker::Lorem.sentence,
-             description: "None")
+             description: Faker::Lorem.paragraph)
 end
 
 10.times do
