@@ -1,13 +1,13 @@
 var surveyId = null;
 
 $(document).ready(function(){
-  
+
   // set questionCount by counting number of question-details forms
   var questionCount = $("form.question-details").length;
   // add answer button logic
   // appends new answer div to question-details form
   $(".container").on("click",".add-answer",function (){
-    $(this).before('<div class="answer"><input type="text" placeholder="Answer"   name="question' +questionCount +'[answers][]"> <button type="button" class="remove-answer"> - </button></div> ');
+    $(this).before('<div class="answer"><input type="text" placeholder="Answer"   name="question[answers][]"> <button type="button" class="remove-answer"> - </button></div> ');
   });
 
   // remove answer button logic
@@ -52,7 +52,7 @@ $(document).ready(function(){
       createOrUpdateSurvey();
       }, 1);
   });
-  
+
   ///// QUESTIONS
 
   // timer for question
@@ -102,13 +102,13 @@ $(document).ready(function(){
       }
     }, 1000);
   });
-  
+
   // add question button logic
   // adds new question-details form to container
   $("#add-question").click(function (){
 
     if (questionCount > 1) {
-      
+
     }
 
     // increment questionCount
