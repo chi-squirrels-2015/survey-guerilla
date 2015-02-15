@@ -23,3 +23,7 @@ post '/logins' do
     erb :"/logins"
   end
 end
+
+get '/puts' do
+  puts params
+end
