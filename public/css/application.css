@@ -186,7 +186,7 @@ input[type="password"] {
 
 .signin-box input[type="submit"]:hover, .signup-box input[type="submit"]:hover{
   float: right;
-  color: #EDF0F0;
+  background-color: #999;
   padding: 10px;
 }
 
