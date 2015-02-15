@@ -37,7 +37,7 @@ $(document).ready(function(){
       });
     }
   }
-
+  //timer for survey
   var surveyTimer = null;
   $(".survey-details input, .survey-details textarea").focus( function(){
     if (surveyTimer) {
@@ -55,8 +55,8 @@ $(document).ready(function(){
   
   ///// QUESTIONS
 
+  // timer for question
   var questionTimer = null;
-
   $(".container").on("focus", ".question-details input", function(){
     if (questionTimer) {
       clearTimeout(questionTimer);
@@ -78,9 +78,21 @@ $(document).ready(function(){
   });
 
 
+
+  //timer for mouse out event
+  var mouseTimer = null;
+  $(".container").on("mouseover", ".question-details input", function(){
+    if (mouseTimer) {
+      console.log("over")
+      clearTimeout(mouseTimer);
+      mouseTimer = null;
+    }
+  });
+
   $(".container").on("mouseout", ".question-details input", function(){
     var formData= $(this).parents('form:first').serialize()
-    questionTimer = setTimeout(function () {
+    mouseTimer = setTimeout(function () {
+      console.log("out")
       if (surveyId) {
         $.ajax({
               url: "/surveys/" + surveyId + "/questions",
@@ -88,9 +100,8 @@ $(document).ready(function(){
               data: formData
             });
       }
-    }, 1);
+    }, 1000);
   });
-
   
   // add question button logic
   // adds new question-details form to container
@@ -110,12 +121,12 @@ $(document).ready(function(){
 
   });
 
-  $("#save-survey").click(function(){
-    $.ajax({
-      url: "/surveys",
-      method: "post",
-      data: $("form").serialize()
-    });
-  });
+  // $("#save-survey").click(function(){
+  //   $.ajax({
+  //     url: "/surveys",
+  //     method: "post",
+  //     data: $("form").serialize()
+  //   });
+  // });
 
 });
