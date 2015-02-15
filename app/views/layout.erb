@@ -23,6 +23,9 @@
     <div id="brand">
       <a href="/">Survey Guerilla</a>
     </div>
+    <% if @error %>
+    <h1><%= @error %></h1>
+    <% end %>
     <ul id="userlogin">
       <% if current_user %>
         <li id="logout"><a href="/users/logout">Log Out</a></li>
@@ -32,8 +35,28 @@
       <% end %>
     </ul>
   </div>
-  <div class="login-popup">
+  <div class="signup-box">
+    <h1>Sign Up</h1>
+    <form id="signup" method="post" action="/users/signup">
+      <input type="name" name="name" placeholder="Name" value="<%= @email %>"><br>
+      <input type="email" name="email" placeholder="Email" value="<%= @email %>"><br>
+      <input type="password" name="password" placeholder="Password"><br>
+      <input type="password" name="password_confirmation" placeholder="Verify Password">
+      <div class="submit">
+        <input type="submit" value="Sign Up">
+      </div>
+    </form>
+  </div>
 
+  <div class="signin-box">
+    <h1>Sign In</h1>
+    <form id="signin" method="post" action="/users/signin">
+      <input type="email" name="email" placeholder="Email" value="<%= @email %>"><br>
+      <input type="password" name="password" placeholder="Password">
+      <div class="submit">
+        <input type="submit" value="Sign In">
+      </div>
+    </form>
   </div>
   <%= yield %>
 </body>

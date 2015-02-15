@@ -14,7 +14,7 @@ post "/userlogin" do
   end
 end
 
-post '/users/login' do
+post '/users/signin' do
 
   # this is the one line, super awesome password
   # authentication provided by BCrypt
@@ -25,7 +25,7 @@ post '/users/login' do
     redirect '/'
   else # if the user is not authenticated
     @error = "try again"
-    erb :"/userlogin"
+    redirect '/'
   end
 end
 
@@ -33,15 +33,16 @@ get '/userlogout' do
   session.clear
 end
 
-post '/users/new' do
+post '/users/signup' do
 
   if params[:password] != params[:password_confirmation]
-    @click = "signup"
-    erb :"/users/new"
+    redirect '/'
   else
-    raise "In ELSE"
-    User.new(name: params[:name], email: params[:email], password: params[:password, password_confirmation: params[:password_confirmation]])
-    if User.save
+    user = User.new(     name: params[:name],
+                        email: params[:email],
+                     password: params[:password],
+        password_confirmation: params[:password_confirmation])
+    if user.save
       redirect '/'
     else
 
