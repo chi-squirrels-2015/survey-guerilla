@@ -6,9 +6,10 @@ $(document).ready(function() {
 
     if (click === "logout"){
       $.ajax({
-        url: "/userlogout"
+        url: "/users/logout"
       }).done(function(){
-        location.reload();
+        window.location="/";
+        // location.reload();
       })
     }else {
       $(".signup-box").hide();

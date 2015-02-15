@@ -29,8 +29,10 @@ post '/users/signin' do
   end
 end
 
-get '/userlogout' do
+get '/users/logout' do
   session.clear
+
+  redirect '/'
 end
 
 post '/users/signup' do
