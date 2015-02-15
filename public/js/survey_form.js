@@ -77,6 +77,20 @@ $(document).ready(function(){
     }, 1);
   });
 
+
+  $(".container").on("mouseout", ".question-details input", function(){
+    var formData= $(this).parents('form:first').serialize()
+    questionTimer = setTimeout(function () {
+      if (surveyId) {
+        $.ajax({
+              url: "/surveys/" + surveyId + "/questions",
+              method: "post",
+              data: formData
+            });
+      }
+    }, 1);
+  });
+
   
   // add question button logic
   // adds new question-details form to container
