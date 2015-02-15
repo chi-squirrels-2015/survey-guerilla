@@ -1,7 +1,3 @@
-get '/' do
-  erb :"/index"
-end
-
 post "/userlogin" do
   @click = params[:click]
 
