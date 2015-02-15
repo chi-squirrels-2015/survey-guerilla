@@ -36,7 +36,6 @@
     </ul>
   </div>
   <div class="signup-box">
-    <h1>Sign Up</h1>
     <form id="signup" method="post" action="/users/signup">
       <input type="name" name="name" placeholder="Name" value="<%= @email %>"><br>
       <input type="email" name="email" placeholder="Email" value="<%= @email %>"><br>
@@ -49,7 +48,6 @@
   </div>
 
   <div class="signin-box">
-    <h1>Sign In</h1>
     <form id="signin" method="post" action="/users/signin">
       <input type="email" name="email" placeholder="Email" value="<%= @email %>"><br>
       <input type="password" name="password" placeholder="Password">
@@ -58,6 +56,9 @@
       </div>
     </form>
   </div>
+
+  <div class="wrapper">
   <%= yield %>
+  </div>
 </body>
 </html>

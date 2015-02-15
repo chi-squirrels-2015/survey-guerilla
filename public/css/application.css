@@ -1,12 +1,43 @@
-#nav {
-  height: 50px;
-  background-color: #000000;
+/*
+A** on Ice Skates Color Pallet
+swan:       #EDF0F0   accent: #CBCDCD
+a**:        #6CDFEA   accent: #51BCC7
+a shade of: #DEE3E3   accent: #BAC0C0
+sh:         #F2FEFF   accent: #D0DDDE
+
+credit: http://www.colourlovers.com/palette/843155/Ass_on_Ice_Skates;
+*/
+html, body {
+  background-color: #DEE3E3;
+  height: 100%;
+  margin: 0;
 }
 
-#brand {
-  float: left;
-  margin-top: 10px;
+.wrapper {
+  margin: 35px auto;
+  background-color: #EDF0F0;
+  width:  90%;
+  height: 100%;
+  margin-top: 100px;
+/*  border-style: solid;
+  border-bottom-style: none;
+  border-color: #D0DDDE;
+  border-width: 3px;*/
 }
+
+#nav {
+  position: fixed;
+  z-index: 500;
+  padding: 5px;
+  height: 50px;
+  background-color: #F2FEFF;
+  border-bottom-style: solid;
+  border-width: 3px;
+  border-color: #D0DDDE;
+  width: 100%;
+  top: 0;
+}
+
 
 #userlogin {
   float: right;
@@ -19,7 +50,7 @@
 }
 
 #most-recent-posts {
-  border-top: 1px solid black;
+  border-top: 3px solid #6CDFEA;
   position: absolute;
   bottom: 0; left:0; right:0;
   width: 80%;
@@ -50,20 +81,32 @@
 
 
 #nav a {
-  color: #ffffff;
+  color: #6CDFEA;
   text-decoration: none;
   font-size: 1.5em;
   margin-left: 100px;
 }
 
 #nav a:hover {
-  color: #00ffdf;
+  color: #51BCC7;
 }
 
-#nav ul li a {
-  font-size: 1em;
+#nav ul {
+  float: right;
+}
+
+#nav li a {
+  font-size: 25px;
+  font-weight: bold;
   margin-left: 0px;
   margin-top: 10px;
+}
+
+#brand {
+  float: left;
+  margin: 5px;
+  font-size: 30px;
+  font-weight: bold;
 }
 
 .answer {
@@ -84,40 +127,67 @@
   position: relative;
   left:0; right:0;
   margin:50px auto;
-  border: 3px solid black;
+  padding: 10px;
   text-align: center;
   width: 300px;
-  border-radius: 10px;
+  border-radius: 5px;
+
 }
 
-.index-button a {
+.signin-box, .signup-box {
+  width: 200px;
+  position: fixed;
+  right: 0;
+  top: 70px;
+  padding: 20px 30px 15px 30px;
+  display: none;
+  background-color: #DEE3E3;
+  float: right;
+  margin-right: 100px;
+  border-radius: 5px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #D0DDDE;
+  border-top-color: #EDF0F0;
+  border-bottom-color: #BAC0C0;
+  border-bottom-width: 2px;
+}
+
+
+.signin-box input, .signup-box input {
+  border-style: none;
+  font-weight: bold;
+  color: #999999;
+}
+
+input[type="email"] {
+  height: 25px;
+  width: 110%;
+  margin-left: -10px;
+}
+
+input[type="name"] {
+  height: 25px;
+  width: 110%;
+  margin-left: -10px;
+}
+
+input[type="password"] {
+  height: 25px;
+  width: 110%;
+  margin-left: -10px;
+}
+
+.signin-box input[type="submit"], .signup-box input[type="submit"]{
+  float: right;
+  color: #EDF0F0;
   padding: 10px;
-  text-decoration: none;
-  display: block;
 }
 
-.signin-box {
-  display: none;
-  background-color: black;
-  opacity: 0.7;
+.signin-box input[type="submit"]:hover, .signup-box input[type="submit"]:hover{
   float: right;
-  margin-right: 100px;
-  margin-top: 5px;
-  border-radius: 10px;
-}
-
-.signup-box {
-  display: none;
-  background-color: black;
-  opacity: 0.7;
-  float: right;
-  margin-right: 100px;
-  margin-top: 5px;
-  border-radius: 10px;
-}
-
-.signup-box h1, .signin-box h1{
-  color: #e9e9e9;
+  color: #EDF0F0;
+  padding: 10px;
 }
 
 form {
