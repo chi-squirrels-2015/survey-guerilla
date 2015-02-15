@@ -1,31 +1,3 @@
-.container {
-  margin: 0 auto;
-  width: 80%;
-  padding: 20px;
-}
-
-form {
-  display: block;
-}
-
-input[type="text"] {
-  height: 40px;
-  width: 200px;
-  border-radius: 5px;
-  margin-top: 20px;
-}
-
-textarea {
-  border-radius: 5px;
-  height: 40px;
-  width: 200px;
-  display: block;
-}
-
-.answer {
-  width: 400px;
-}
-
 #nav {
   height: 50px;
   background-color: #000000;
@@ -46,6 +18,11 @@ textarea {
   margin-right: 20px;
 }
 
+#most-recent-posts {
+  position: absolute;
+  bottom: 0px;
+}
+
 #nav a {
   color: #ffffff;
   text-decoration: none;
@@ -61,6 +38,16 @@ textarea {
   font-size: 1em;
   margin-left: 0px;
   margin-top: 10px;
+}
+
+.answer {
+  width: 400px;
+}
+
+.container {
+  margin: 0 auto;
+  width: 80%;
+  padding: 20px;
 }
 
 .signup-box {
@@ -90,8 +77,26 @@ textarea {
   padding: 30px;
 }
 
+form {
+  display: block;
+}
+
 input {
   margin: 5px;
   border-radius: 5px;
+}
+
+input[type="text"] {
+  height: 40px;
+  width: 200px;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+
+textarea {
+  border-radius: 5px;
+  height: 40px;
+  width: 200px;
+  display: block;
 }
 

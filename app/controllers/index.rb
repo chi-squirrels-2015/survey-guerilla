@@ -1,5 +1,7 @@
 # renders the index page
 get '/' do
+  @five_most_recent_surveys = Survey.order(created_at: :desc).limit(5)
+
   erb :index
 end
 

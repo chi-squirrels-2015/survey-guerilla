@@ -1,3 +1,19 @@
+
+
+
+
 <div class="container">
-  <img src="https://a1-images.myspacecdn.com/images03/33/8623cf504e344db6a07609edb31ac431/300x300.jpg">
+  <section id="most-recent-posts">
+
+    <h2>Five Most Recent Surveys</h2>
+    <ol>
+    <% @five_most_recent_surveys.each do |survey| %>
+      <li><h3><%= survey.title %></h3>
+          <p><%= survey.description %></p></li>
+    <% end %>
+    </ol>
+  </section>
 </div>
+
+
+
