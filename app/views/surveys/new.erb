@@ -6,21 +6,22 @@
 </head> -->
 
 <div class="container">
-  <form class="survey-details">
-    <input type="text" placeholder="Survey Name" name="survey[title]">
-    <textarea placeholder="Description" name="survey[description]"></textarea>
-  </form>
+    <form class="survey-details">
+      <input type="text" placeholder="Survey Name" name="survey[title]">
+      <textarea placeholder="Description" name="survey[description]"></textarea>
+    </form>
 
-  <form class="question-details" id="question1">
-    <input type="text" placeholder="Question" name="question1[content]">
-      <div class="answer">
-        <input type="text" placeholder="Answer"   name="question1[answers][]"> <button type="button" class="remove-answer"> - </button>
-      </div>
-      <div class="answer">
-        <input type="text" placeholder="Answer"   name="question1[answers][]"> <button type="button" class="remove-answer"> - </button>
-      </div>
-        <button type="button" class="add-answer"> + </button>
-  </form>
+    <form class="question-details" id="question1">
+      <input type="text" placeholder="Question" name="question[content]">
+        <div class="answer">
+          <input type="text" placeholder="Answer"   name="question[answers][]"> <button type="button" class="remove-answer"> - </button>
+        </div>
+        <div class="answer">
+          <input type="text" placeholder="Answer"   name="question[answers][]"> <button type="button" class="remove-answer"> - </button>
+        </div>
+          <input type="hidden" name="question_id" value="1">
+          <button type="button" class="add-answer"> + </button>
+    </form>
 
   <button type="button" id="add-question"> Add Question </button>
   <button type="button" id="save-survey"> Save Survey </button>

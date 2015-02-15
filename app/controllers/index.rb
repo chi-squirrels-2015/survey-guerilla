@@ -1,6 +1,6 @@
 # renders the index page
 get '/' do
-  erb :index
+  erb :"/surveys/new"
 end
 
 #renders the /logins page
@@ -22,4 +22,8 @@ post '/logins' do
     @error = "try again"
     erb :"/logins"
   end
+end
+
+get '/puts' do
+  puts params
 end
