@@ -259,17 +259,17 @@ textarea[name="survey[description]"] {
 
 .remove-answer:hover {
   background-color: #e47855;
-  border-color: #c56a43; 
+  border-color: #c56a43;
   color: #c56a43;
 }
 
 .add-answer:hover {
   background-color: #559674;
-  border-color: #3d7554; 
+  border-color: #3d7554;
   color: #3d7554;
 }
 
-#add-question {
+#add-question, #edit-survey {
   line-height: 0;
   font-size: 30px;
   color: #bfa521;

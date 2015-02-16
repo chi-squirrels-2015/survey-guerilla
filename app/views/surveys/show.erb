@@ -1,6 +1,12 @@
 <div class="container">
+  <% if current_user == @survey.creator %>
+    <a href="/surveys/<%= @survey.id %>/edit"><button type="button" id="edit-survey"> Edit Survey </button></a>
+    <p>WARNING: editing a survey which already has response records will erase corresponding all response records</p>
+  <% end %>
+
   <h1><%= @survey.title %></h1>
   <h2><%= @survey.description %></h2>
+
 
 <form action="/surveys/<%= @survey.id %>/records" method="POST">
   <% @survey.questions.each do |question| %>

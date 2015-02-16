@@ -15,6 +15,11 @@ post '/surveys' do
   {id: survey.id}.to_json
 end
 
+get '/surveys/:survey_id/edit' do
+  @survey = Survey.find(params[:survey_id])
+  erb :"surveys/edit"
+end
+
 put '/surveys/:survey_id/edit' do
   survey = Survey.find(params[:survey_id])
   survey.update(title: params[:survey][:title], description: params[:survey][:description])
