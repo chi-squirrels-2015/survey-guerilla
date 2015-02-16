@@ -4,7 +4,7 @@
     <div id="your-surveys" class="survey-list">
       <ol>
         <% current_user.surveys.each do |survey| %>
-          <li><h3><a href="/survey/<%= survey.id %>"><%= survey.title %></a></h3>
+          <li><h3><a href="/surveys/<%= survey.id %>"><%= survey.title %></a></h3>
           <p><%= survey.created_at.strftime("%B %d, %Y") %></p>
           <p><%= survey.description %></p></li>
         <% end %>
@@ -13,7 +13,7 @@
     <div id="others-surveys" class="survey-list">
       <ol>
         <% current_user.records.each do |record| %>
-          <li><h3><a href="/survey/<%= record.survey_id %>"><%= record.survey.title %></a></h3>
+          <li><h3><a href="/surveys/<%= record.survey_id %>"><%= record.survey.title %></a></h3>
           <p><%= record.survey.created_at.strftime("%B %d, %Y") %></p>
           <p><%= record.survey.description %></p></li>
         <% end %>
