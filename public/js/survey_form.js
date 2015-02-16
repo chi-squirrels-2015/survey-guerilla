@@ -65,7 +65,7 @@ $(document).ready(function(){
   });
 
   $(".container").on("blur", ".question-details input", function(){
-    var formData= $(this).parents('form:first').serialize()
+    var formData= $(this).parents('form:first').serialize();
     questionTimer = setTimeout(function () {
       if (surveyId) {
         $.ajax({
@@ -83,16 +83,16 @@ $(document).ready(function(){
   var mouseTimer = null;
   $(".container").on("mouseover", ".question-details input", function(){
     if (mouseTimer) {
-      console.log("over")
+      console.log("over");
       clearTimeout(mouseTimer);
       mouseTimer = null;
     }
   });
 
   $(".container").on("mouseout", ".question-details input", function(){
-    var formData= $(this).parents('form:first').serialize()
+    var formData= $(this).parents('form:first').serialize();
     mouseTimer = setTimeout(function () {
-      console.log("out")
+      console.log("out");
       if (surveyId) {
         $.ajax({
               url: "/surveys/" + surveyId + "/questions",
@@ -121,12 +121,9 @@ $(document).ready(function(){
 
   });
 
-  // $("#save-survey").click(function(){
-  //   $.ajax({
-  //     url: "/surveys",
-  //     method: "post",
-  //     data: $("form").serialize()
-  //   });
-  // });
-
+  $("#save-survey").click(function(){
+    if (surveyId) {
+      window.location.replace("/surveys/"+surveyId);
+    }
+  });
 });
