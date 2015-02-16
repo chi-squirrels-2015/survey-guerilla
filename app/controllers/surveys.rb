@@ -1,3 +1,8 @@
+get '/surveys/all' do
+  @surveys = Survey.all
+  erb :"/surveys/all"
+end
+
 get '/surveys/new' do
   erb :"/surveys/new"
 end

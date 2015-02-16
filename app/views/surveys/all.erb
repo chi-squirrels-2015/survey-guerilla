@@ -1,0 +1,14 @@
+<div class="container">
+  <h1>All Surveys</h1>
+  <div class="survey-list">
+    <ol>
+      <% @surveys.each do |survey| %>
+        <li><h3><a href="/survey/<%= survey.id %>"><%= survey.title %></a></h3>
+        <p>Created by: <%= survey.creator.name %></p>
+        <p>Created on: <%= survey.created_at.strftime("%B %d, %Y") %></p>
+        <p><%= survey.description %></p></li>
+        <p>Number of respondents: <%= Record.where("survey_id = #{survey.id}").count %></p>
+      <% end %>
+    </ol>
+  </div>
+</div>
