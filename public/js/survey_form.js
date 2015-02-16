@@ -115,7 +115,7 @@ $(document).ready(function(){
     questionCount += 1;
 
     // really long variable, because.  Maybe we will AJAX it later.
-    var questionForm = '<form class="question-details" id="question'+ questionCount +'"><input type="text" placeholder="Question" name="question[content]"> <div class="answer"> <input type="text" placeholder="Answer"   name="question[answers][]"> <button type="button" class="remove-answer"> - </button> </div> <div class="answer"> <input type="text" placeholder="Answer"   name="question[answers][]"> <input type="hidden" name="question_id" value="'+ questionCount +'"> <button type="button" class="remove-answer"> - </button> </div> <button type="button" class="add-answer"> + </button></form>';
+    var questionForm = '<form class="question-details" id="question'+ questionCount +'"><input type="text" placeholder="Question" name="question[content]"> <div class="answer"> <input type="text" placeholder="Answer"   name="question[answers][]"> <button type="button" class="remove-answer"> - </button> </div> <div class="answer"> <input type="text" placeholder="Answer"   name="question[answers][]"> <input type="hidden" name="question_id" value="'+ questionCount +'"> <button type="button" class="remove-answer"> - </button> </div> <button type="button" class="add-answer"> Add an Answer </button></form>';
 
     $(this).before(questionForm);
 
