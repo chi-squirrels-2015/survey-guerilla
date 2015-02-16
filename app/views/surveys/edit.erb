@@ -1,0 +1,21 @@
+<div class="container">
+    <form class="survey-details">
+      <input type="text" placeholder="Survey Name" name="survey[title]" value="<%= @survey.title %>">
+      <textarea placeholder="Description" name="survey[description]"><%= @survey.description %></textarea>
+    </form>
+
+    <% @survey.questions.each_with_index do |question, index| %>
+      <form class="question-details" id="question<%= "#{index+1}" %>">
+        <input type="text" placeholder="Question" name="question[content]" value="<%= question.content %>">
+          <% question.answers.each do |answer|  %>
+            <div class="answer">
+              <input type="text" placeholder="Answer" name="question[answers][]" value="<%= answer.content %>"> <button type="button" class="remove-answer"> - </button>
+            </div>
+          <% end %>
+            <input type="hidden" name="question_id" value="1">
+            <button type="button" class="add-answer"> Add an Answer </button>
+      </form>
+    <% end %>
+  <button type="button" id="add-question"> Add a Question </button>
+  <button type="button" id="save-survey"> Complete and View Survey </button>
+</div>
