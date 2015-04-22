@@ -1,5 +1,3 @@
-web: bundle exec rackup config.ru -p $PORT
-
 # Require config/environment.rb
 require ::File.expand_path('../config/environment',  __FILE__)
 
